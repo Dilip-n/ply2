@@ -70,6 +70,12 @@ test("test", async ({ page }) => {
 
   await expect(page).toHaveURL(`${vignaharthaCreds.host}/devices`);
   await new Promise((resolve) => setTimeout(resolve, 2000));
+  await page.click(
+    "//html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[19]/span[1]/span[1]/span[1]"
+  );
+
+  await page.waitForLoadState("networkidle");
+
   const locator2 = page.locator(
     "//html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[10]"
   );

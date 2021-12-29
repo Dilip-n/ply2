@@ -72,7 +72,9 @@ test("SiteAtest", async ({ page }) => {
   let cell5 = worksheet.getCell("G4");
   cell5.value = locator5_innertext;
 
-  const locator = page.locator("//tbody/tr[1]/td[7]");
+  const locator = page.locator(
+    "//html[1]/body[1]/div[1]/div[1]/section[1]/section[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[7]"
+  );
   const locator_innertext = await locator.innerText();
   // console.log("SiteA/WingA refreshed at " + locator_innertext);
   await expect(locator).toContainText(locator_innertext);
@@ -166,7 +168,9 @@ test("SiteBtest", async ({ page }) => {
   let cell5 = worksheet.getCell("G5");
   cell5.value = locator5_innertext;
 
-  const locator = page.locator("//tbody/tr[2]/td[7]");
+  const locator = page.locator(
+    "//html[1]/body[1]/div[1]/div[1]/section[1]/section[1]/div[1]/main[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[3]/td[7]"
+  );
   const locator_innertext = await locator.innerText();
   // console.log("SiteB/WingB refreshed at" + locator_innertext);
   //await expect(locator).toContainText(locator_innertext);

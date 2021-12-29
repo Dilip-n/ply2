@@ -73,13 +73,14 @@ test("test", async ({ page }) => {
   const locator11 = page.locator(
     "//html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/button[1]"
   );
-  const locator_innertext11 = await locator11.innerText();
+  const locator_query2 = await locator11.innerText();
 
-  console.log(`${locator_innertext11} is ${locator_innertext2}`);
+  console.log(`${locator_query2} is ${locator_innertext2}`);
 
   let cell1 = worksheet.getCell("G9");
   cell1.value =
-    `QEERI1 is ${locator_innertext1} ` + `QEERI2 is ${locator_innertext2} `;
+    `QEERI1 is ${locator_innertext1} ` +
+    `${locator_query2} is ${locator_innertext2} `;
 
   await page.waitForLoadState("networkidle");
 
